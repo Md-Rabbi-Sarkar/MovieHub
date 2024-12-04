@@ -1,7 +1,7 @@
 import React from 'react'
 import Slider from '../component/Slider'
 import FeaturedMovies from '../component/FeaturedMovies'
-import Blogs from '../component/Blogs'
+import Blogs from './Blogs'
 import News from '../component/News'
 export default function Home() {
   return (

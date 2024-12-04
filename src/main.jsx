@@ -13,6 +13,11 @@ import Login from './page/Login.jsx';
 import Register from './page/Register.jsx';
 import Newses from './page/Newses.jsx';
 import Error from './Error.jsx';
+import Allmovies from './page/Allmovies.jsx';
+import Blogs from './page/Blogs.jsx';
+import PrivateRoute from './Privateroute/PrivateRoute.jsx';
+import Addmoive from './page/Addmoive.jsx';
+import Favoritemovie from './page/Favoritemovie.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,8 +38,24 @@ const router = createBrowserRouter([
         element:<Register></Register>
       },
       {
+        path:'/allmovies',
+        element: <Allmovies></Allmovies>
+      },
+      {
+        path:'/blogs',
+        element:<Blogs></Blogs>
+      },
+      {
         path:'/newses',
         element:<Newses></Newses>
+      },
+      {
+        path:'/addmovie',
+        element:<PrivateRoute><Addmoive></Addmoive></PrivateRoute>
+      },
+      {
+        path:'/favorite',
+        element:<PrivateRoute><Favoritemovie></Favoritemovie></PrivateRoute>
       }
     ]
   },
