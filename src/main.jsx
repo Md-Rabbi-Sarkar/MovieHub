@@ -18,6 +18,7 @@ import Blogs from './page/Blogs.jsx';
 import PrivateRoute from './Privateroute/PrivateRoute.jsx';
 import Addmoive from './page/Addmoive.jsx';
 import Favoritemovie from './page/Favoritemovie.jsx';
+import Movie from './page/Movie.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,13 @@ const router = createBrowserRouter([
       },
       {
         path:'/allmovies',
-        element: <Allmovies></Allmovies>
+        element: <Allmovies></Allmovies>,
+        loader:()=>fetch('http://localhost:1000/movies')
+      },
+      {
+        path:'/movies/:id',
+        element:<Movie></Movie>,
+        loader:({params})=>fetch(`http://localhost:1000/movies/${params.id}`)
       },
       {
         path:'/blogs',
