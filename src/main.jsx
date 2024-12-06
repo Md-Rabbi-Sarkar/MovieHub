@@ -53,7 +53,7 @@ const router = createBrowserRouter([
       {
         path:'/movie/:id',
         element:<Update></Update>,
-        loader:({params})=>fetch(`http://localhost:1000/movie/${params.id}`)
+        loader:({params})=>fetch(`http://localhost:1000/movies/${params.id}`)
       },
       {
         path:'/blogs',
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
         path:'/favorite/:email',
         element:<PrivateRoute><Favoritemovie></Favoritemovie></PrivateRoute>,
         loader:({params})=>fetch(`http://localhost:1000/favorite/${params.email}`),
-      }
+      },
 
     ]
   },

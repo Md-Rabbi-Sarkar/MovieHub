@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 
 export default function FeaturedMovies() {
   const [fetureds,setfetureds] = useState([])
 useEffect(()=>{
-  fetch("http://localhost:1000/favorite")
+  fetch("http://localhost:1000/movies")
   .then(res =>res.json())
   .then(data=>setfetureds(data))
 },[])
   return (
-    <div>
-      {fetureds.map(fetured=><p key={fetured._id}>{fetured.movietitle}</p>)}
+    <div className='grid grid-cols-3 gap-5 border rounded-xl m-10 p-5'>
+      {fetureds.map(fetured=><div key={fetured._id}>
+        <img className='rounded-2xl w-full ' src={fetured.movieposter} alt="" />
+         <p>Title: {fetured.movietitle}</p>
+         <p>Genre: {fetured.genre}</p> 
+         <p>Drration: {fetured.duration}</p>
+         <p>Releaseyear: {fetured.releaseyear}</p>
+          <p>Rating: {fetured.rating}</p>
+          <button className='btn'><Link to={`/movies/${fetured._id}`}>Details</Link></button>
+
+      </div>)}
     </div>
   )
 }

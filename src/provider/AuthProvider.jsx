@@ -9,6 +9,15 @@ export default function AuthProvider({children}) {
 
     const [loading, setloading] = useState(true);
     const [user, setUser] = useState(null)
+    const [addfavorite,setaddfavorite] =useState([])
+
+    const handleadded =(id) =>{
+       useEffect(()=>{
+        fetch(`http://localhost:1000/movie/${id}`)
+        .then(res=>res.json())
+        .then(data=>setaddfavorite(data))
+       },[])
+    }
 
     const createuserwithemail = (email,passowrd) =>{
         setloading(true)
@@ -48,7 +57,9 @@ export default function AuthProvider({children}) {
         logoutaccount,
         user,
         setloading,
-        loading
+        loading,
+        addfavorite,
+        handleadded
     }
 
     return (

@@ -6,3 +6,9 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 1
+Website Name: Movie Hub
+# 2
+Live Link of Site: https://movie-hub-client.web.app/
+# 3
+Fetured: Personalized Recommendations,  Watchlist and Favorites Management, Detailed Movie Information, Community Reviews and Ratings,  Social Sharing and Collaborative Playlists

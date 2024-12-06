@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD63X9NpAhm1GODZB0zwBnhI3zIopURxRc",
-  authDomain: "movie-hub-client.firebaseapp.com",
-  projectId: "movie-hub-client",
-  storageBucket: "movie-hub-client.firebasestorage.app",
-  messagingSenderId: "309896160447",
-  appId: "1:309896160447:web:d6fdd273717fa4d803d20a"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
