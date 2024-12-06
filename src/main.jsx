@@ -19,6 +19,8 @@ import PrivateRoute from './Privateroute/PrivateRoute.jsx';
 import Addmoive from './page/Addmoive.jsx';
 import Favoritemovie from './page/Favoritemovie.jsx';
 import Movie from './page/Movie.jsx';
+import Update from './page/Update.jsx';
+import FeaturedMovies from './component/FeaturedMovies.jsx';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +51,11 @@ const router = createBrowserRouter([
         loader:({params})=>fetch(`http://localhost:1000/movies/${params.id}`)
       },
       {
+        path:'/movie/:id',
+        element:<Update></Update>,
+        loader:({params})=>fetch(`http://localhost:1000/movie/${params.id}`)
+      },
+      {
         path:'/blogs',
         element:<Blogs></Blogs>
       },
@@ -61,9 +68,11 @@ const router = createBrowserRouter([
         element:<PrivateRoute><Addmoive></Addmoive></PrivateRoute>
       },
       {
-        path:'/favorite',
-        element:<PrivateRoute><Favoritemovie></Favoritemovie></PrivateRoute>
+        path:'/favorite/:email',
+        element:<PrivateRoute><Favoritemovie></Favoritemovie></PrivateRoute>,
+        loader:({params})=>fetch(`http://localhost:1000/favorite/${params.email}`),
       }
+
     ]
   },
 ]);
