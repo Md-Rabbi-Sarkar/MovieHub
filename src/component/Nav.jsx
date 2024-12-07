@@ -33,7 +33,7 @@ export default function Nav() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-black">
            <li><Link to='/'><a>Home</a></Link></li>
           <li><Link to='/allmovies'><a>All movies</a></Link></li>
           <li><Link to='/blogs'><a>Blog</a></Link></li>
@@ -42,9 +42,9 @@ export default function Nav() {
 
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl"><Link to='/'>Movie Hub</Link></a>
+        <a className="btn btn-ghost text-xl text-black"><Link to='/'>Movie Hub</Link></a>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden lg:flex text-black">
         <ul className="menu menu-horizontal px-1">
           <li><Link to='/'><a>Home</a></Link></li>
           <li><Link to='/allmovies'><a>All movies</a></Link></li>
