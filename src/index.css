@@ -17,3 +17,33 @@
     background: #efefef;
     text-align: center;
   }
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+  }
+  [data-theme="dark"] {
+    --bg-color: #181818;
+    --text-color: #ffffff;
+  }
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .App {
+    text-align: center;
+    padding: 20px;
+  }
+  .theme-toggle button {
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
