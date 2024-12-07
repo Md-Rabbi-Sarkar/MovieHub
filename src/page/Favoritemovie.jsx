@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify'
 
 export default function Favoritemovie() {
   const lodedfaverite = useLoaderData()
@@ -12,7 +13,7 @@ export default function Favoritemovie() {
     .then(data=>{
       console.log(data)
       if(data.deletedCount>0){
-        alert('successfull')
+        toast("successfully deleted")
         const array = Object.values(favorites)
         const reamining = array.filter(movie=>movie._id !==id);
         setfavorite(reamining)
@@ -36,6 +37,7 @@ export default function Favoritemovie() {
           <p>Rating: {favorite.rating}</p>
         <button onClick={() => handledelete(favorite._id)} className='btn'>Delete Favorite</button>
         </div>)}
+        <ToastContainer></ToastContainer>
     </div>
   )
 }

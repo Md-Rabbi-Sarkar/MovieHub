@@ -35,7 +35,7 @@ export default function Update() {
         return;
       }
       if(!e.email){
-        toast.error()
+        toast.error('give your email')
       }
       
       fetch(`http://localhost:1000/movies/${singlemovie._id}`,{
@@ -49,7 +49,7 @@ export default function Update() {
       .then(data=>{
         console.log(data)
         if(data.modifiedCount>0){
-          alert('Successfully update')
+          toast('successfully updated')
           
         }        
       })

@@ -3,6 +3,8 @@ import Slider from '../component/Slider'
 import FeaturedMovies from '../component/FeaturedMovies'
 import Blogs from './Blogs'
 import News from '../component/News'
+import Newses from './Newses'
+import { ToastContainer } from 'react-toastify'
 export default function Home() {
   const [theme, setTheme] = useState("light")
   useEffect(() => {
@@ -27,7 +29,8 @@ export default function Home() {
       <Slider></Slider>
       <FeaturedMovies></FeaturedMovies>
       <Blogs></Blogs>
-      <News></News>
+      <Newses></Newses>
+     
     </div>
   )
 }

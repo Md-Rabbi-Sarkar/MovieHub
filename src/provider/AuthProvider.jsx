@@ -1,23 +1,20 @@
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateCurrentUser } from 'firebase/auth'
 import React, { Children, createContext, useEffect, useState } from 'react'
 import { auth } from './firebase';
+import axios from 'axios';
 
 const provider = new GoogleAuthProvider();
 export const AuthContext = createContext(null);
 
-export default function AuthProvider({children}) {
+export default function AuthProvider({children,id}) {
 
     const [loading, setloading] = useState(true);
     const [user, setUser] = useState(null)
-    const [addfavorite,setaddfavorite] =useState([])
+    
+   
 
-    const handleadded =(id) =>{
-       useEffect(()=>{
-        fetch(`http://localhost:1000/movie/${id}`)
-        .then(res=>res.json())
-        .then(data=>setaddfavorite(data))
-       },[])
-    }
+         
+    
 
     const createuserwithemail = (email,passowrd) =>{
         setloading(true)
@@ -58,8 +55,8 @@ export default function AuthProvider({children}) {
         user,
         setloading,
         loading,
-        addfavorite,
-        handleadded
+        
+       
     }
 
     return (
