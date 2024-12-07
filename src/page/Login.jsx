@@ -21,7 +21,7 @@ const handlesubmit =(e)=>{
      Navigate('/')
   })
   .catch(error=>{
-    console.log(error.message)
+    toast(error.message)
 
   })  
 
@@ -33,7 +33,7 @@ const signGoogle =()=>{
     Navigate('/')
   })
   .catch(error=>{
-    console.log(error.message)
+    toast(error.message)
 
   })
 

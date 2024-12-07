@@ -14,19 +14,14 @@ const handlesubmit =(e)=>{
   e.preventDefault();
   const email = e.target.email.value
   const password = e.target.password.value
-  if(password.length < 6){
-    return console.log("passowed")
-  }
-  if(/[A-Z]/.test(!password)){
-    return console.log('uppercase')
-  }
+  
   createuserwithemail(email,password)
   .then( result=>{
     console.log(result)
      navigat('/')
   })
   .catch(error=>{
-    console.log(error.message)
+    toast(error.message)
   
   }) 
 }
@@ -38,7 +33,7 @@ const handlesubmit =(e)=>{
       navigat('/')
     })
     .catch(error=>{
-      console.log(error.message)
+      toast(error.message)
     })
 
    

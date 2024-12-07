@@ -57,7 +57,7 @@ export default function Nav() {
 
       <div className="navbar-end">
 
-        {user ?<> <NavLink to='/addmovie' className='btn mr-2'>Add Movie</NavLink> <NavLink to={`/favorite/${user.email}`} className='btn mr-2'>MY fevetaite</NavLink><a onClick={handleLogOut} className="btn">LogOut</a></>  :<><Link to='login'><a className="btn">Login</a></Link><Link to='register'><a className="btn">Register</a></Link></> }
+        {user ?<> <NavLink to='/addmovie' className='btn mr-2'>Add Movie</NavLink> <NavLink to={`/favorite/${user.email}`} className='btn mr-2'>MY fevetaite</NavLink><a onClick={handleLogOut} className="btn">LogOut</a></>  :<><Link to='login'><a className="btn mr-2">Login</a></Link><Link to='register'><a className="btn">Register</a></Link></> }
         <div className='relative group ml-2'><img className='w-10 rounded-xl' src={user?.photoURL} alt="" />
           <div
             class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full 

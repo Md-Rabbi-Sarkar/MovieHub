@@ -14,17 +14,17 @@ export default function Slider() {
         <Slide>
             <div className="each-slide-effect">
                 <div style={{ 'backgroundImage': `url(${images[0]})` }}>
-                    
+                    <p>This is really awasm movie</p>
                 </div>
             </div>
             <div className="each-slide-effect">
                 <div style={{ 'backgroundImage': `url(${images[1]})` }}>
-                    
+                <p>This is really awasm movie</p>
                 </div>
             </div>
             <div className="each-slide-effect">
                 <div style={{ 'backgroundImage': `url(${images[2]})` }}>
-                    
+                <p>This is really awasm movie</p>
                 </div>
             </div>
         </Slide>
