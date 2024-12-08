@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-// import { AuthContext } from '../Provider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../provider/AuthProvider';

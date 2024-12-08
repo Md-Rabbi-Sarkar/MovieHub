@@ -47,7 +47,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/movies/:id',
-        element:<Movie></Movie>,
+        element:<PrivateRoute><Movie></Movie></PrivateRoute>,
         loader:({params})=>fetch(`https://movie-hub-server-phi.vercel.app/movies/${params.id}`)
       },
       {

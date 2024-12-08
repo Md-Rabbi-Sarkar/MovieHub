@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-// import { AuthContext } from '../Provider/AuthProvider'
+
 import { Result } from 'postcss';
 import { AuthContext } from '../provider/AuthProvider';
 
 export default function Nav() {
   const { user, logoutaccount } = useContext(AuthContext)
 
-  // console.log(user)
+
   const handleLogOut = () => {
     logoutaccount()
       .then(result => console.log(result))
@@ -34,11 +34,11 @@ export default function Nav() {
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-black">
-           <li><Link to='/'><a>Home</a></Link></li>
-          <li><Link to='/allmovies'><a>All movies</a></Link></li>
-          <li><Link to='/blogs'><a>Blog</a></Link></li>
-          <li><Link to='/newses'><a>News</a></Link></li>
-         
+            <li><Link to='/'><a>Home</a></Link></li>
+            <li><Link to='/allmovies'><a>All movies</a></Link></li>
+            <li><Link to='/blogs'><a>Blog</a></Link></li>
+            <li><Link to='/newses'><a>News</a></Link></li>
+
 
           </ul>
         </div>
@@ -50,14 +50,14 @@ export default function Nav() {
           <li><Link to='/allmovies'><a>All movies</a></Link></li>
           <li><Link to='/blogs'><a>Blog</a></Link></li>
           <li><Link to='/newses'><a>News</a></Link></li>
-         
-         
+
+
         </ul>
       </div>
 
       <div className="navbar-end">
 
-        {user ?<> <NavLink to='/addmovie' className='btn mr-2'>Add Movie</NavLink> <NavLink to={`/favorite/${user.email}`} className='btn mr-2'>MY fevetaite</NavLink><a onClick={handleLogOut} className="btn">LogOut</a></>  :<><Link to='login'><a className="btn mr-2">Login</a></Link><Link to='register'><a className="btn">Register</a></Link></> }
+        {user ? <> <NavLink to='/addmovie' className='btn mr-2'>Add Movie</NavLink> <NavLink to={`/favorite/${user.email}`} className='btn mr-2'>MY fevetaite</NavLink><a onClick={handleLogOut} className="btn">LogOut</a></> : <><Link to='login'><a className="btn mr-2">Login</a></Link><Link to='register'><a className="btn">Register</a></Link></>}
         <div className='relative group ml-2'><img className='w-10 rounded-xl' src={user?.photoURL} alt="" />
           <div
             class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full 
