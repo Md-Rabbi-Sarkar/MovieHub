@@ -7,13 +7,16 @@ export default function Movie() {
     const lodedmovie = useLoaderData()
     const neviget = useNavigate()
     const [movies,setmovies] = useState(lodedmovie)
+    const {user} = useContext(AuthContext);
   
     const handledelete =(id) =>{
+   
+
         fetch(`http://localhost:1000/movies/${id}`,{
             method:'DELETE'
         })
         .then(res =>res.json())
-
+        
         .then(data=>{
             console.log(data)
             if(data.deletedCount>0){
@@ -26,6 +29,30 @@ export default function Movie() {
             }
         })
     }
+    const handleadded =(id)=>{
+        const array = Object.values(movies)
+         const filter = array.filter(movie=>movie._id == id)
+        //  console.log(filter.array)
+        const input = {user}
+        // console.log(input)
+        fetch(`http://localhost:1000/movieses/${id}`,{
+            method:'PUT',
+            headers:{
+              'content-type':'application/json',
+            },
+            body:JSON.stringify(input)
+          })
+          .then(res =>res.json())
+          .then(data=>{
+            console.log(data)
+            if(data.modifiedCount>0){
+              toast('successfully updated')
+              
+            }        
+          })
+    }
+
+
     
     return (
     <div className='mx-auto text-center my-10  '>

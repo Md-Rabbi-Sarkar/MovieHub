@@ -8,7 +8,7 @@ export default function Allmovies() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    const results = movies.filter((movie) => movie.movietitle.toLowerCase().includes(searchTerm.toLowerCase())
+    const results = movies.filter((movie) => movie?.movietitle.toLowerCase()?.includes(searchTerm?.toLowerCase())
     );
     setfilteredmovie(results)
   }, [searchTerm, movies])

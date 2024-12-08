@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
+import { AuthContext } from '../provider/AuthProvider'
 
 export default function Favoritemovie() {
   const lodedfaverite = useLoaderData()
   const [favorites,setfavorite] = useState(lodedfaverite)
+  // const {addfavorite} = useContext(AuthContext)
+  // console.log(addfavorite)
   const handledelete =(id) =>{
     fetch(`http://localhost:1000/favorite/${id}`,{
       method:'DELETE',
@@ -27,8 +30,8 @@ export default function Favoritemovie() {
   
   return (
     <div className='grid grid-cols-3 gap-5 border rounded-xl m-10 p-5'>
-      {favorites.map(favorite=>
-      <div>
+      {favorites.map((favorite,index)=>
+      <div key={index}>
         <img className='rounded-2xl w-full ' src={favorite.movieposter} alt="" />
          <p>Title: {favorite.movietitle}</p>
          <p>Genre: {favorite.genre}</p> 

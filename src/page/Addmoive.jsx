@@ -77,7 +77,7 @@ export default function Addmoive() {
               <label className="label">
                 <span className="label-text">Genre</span>
               </label>
-              <select {...register("genre")}>
+              <select {...register("genre")} className='border p-3 rounded-lg'>
                 <option value="Comedy">Comedy</option>
                 <option value="Drama">Drama</option>
                 <option value="Horror">Horror</option>
@@ -94,7 +94,7 @@ export default function Addmoive() {
               <label className="label">
                 <span className="label-text">Release Year</span>
               </label>
-              <select{...register("releaseyear")}>
+              <select{...register("releaseyear")} className='border p-3 rounded-lg'>
                 <option value="2020">2020</option>
                 <option value="2021">2021</option>
                 <option value="2022">2022</option>
