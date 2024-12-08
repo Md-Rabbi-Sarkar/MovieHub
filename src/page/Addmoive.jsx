@@ -36,7 +36,7 @@ export default function Addmoive() {
     }
    
 
-    fetch('http://localhost:1000/addmovie', {
+    fetch('https://movie-hub-server-phi.vercel.app/addmovie', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

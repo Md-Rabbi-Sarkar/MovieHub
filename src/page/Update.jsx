@@ -38,7 +38,7 @@ export default function Update() {
         toast.error('give your email')
       }
       
-      fetch(`http://localhost:1000/movies/${singlemovie._id}`,{
+      fetch(`https://movie-hub-server-phi.vercel.app/movies/${singlemovie._id}`,{
         method:'PUT',
         headers:{
           'content-type':'application/json',

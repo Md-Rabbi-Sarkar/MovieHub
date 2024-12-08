@@ -43,17 +43,17 @@ const router = createBrowserRouter([
       {
         path:'/allmovies',
         element: <Allmovies></Allmovies>,
-        loader:()=>fetch('http://localhost:1000/movies')
+        loader:()=>fetch('https://movie-hub-server-phi.vercel.app/movies')
       },
       {
         path:'/movies/:id',
         element:<Movie></Movie>,
-        loader:({params})=>fetch(`http://localhost:1000/movies/${params.id}`)
+        loader:({params})=>fetch(`https://movie-hub-server-phi.vercel.app/movies/${params.id}`)
       },
       {
         path:'/movie/:id',
         element:<PrivateRoute><Update></Update></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:1000/movies/${params.id}`)
+        loader:({params})=>fetch(`https://movie-hub-server-phi.vercel.app/movies/${params.id}`)
       },
       {
         path:'/blogs',
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
       {
         path:'/favorite/:email',
         element:<PrivateRoute><Favoritemovie></Favoritemovie></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:1000/favorite/${params.email}`),
+        loader:({params})=>fetch(`https://movie-hub-server-phi.vercel.app/favorite/${params.email}`),
       },
 
     ]

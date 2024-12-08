@@ -4,7 +4,7 @@ import { Link, useLoaderData } from 'react-router-dom'
 export default function FeaturedMovies() {
   const [fetureds,setfetureds] = useState([])
 useEffect(()=>{
-  fetch("http://localhost:1000/fetured")
+  fetch("https://movie-hub-server-phi.vercel.app/fetured")
   .then(res =>res.json())
   .then(data=>setfetureds(data))
 },[])

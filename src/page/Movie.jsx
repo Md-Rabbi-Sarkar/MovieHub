@@ -12,7 +12,7 @@ export default function Movie() {
     const handledelete =(id) =>{
    
 
-        fetch(`http://localhost:1000/movies/${id}`,{
+        fetch(`https://movie-hub-server-phi.vercel.app/movies/${id}`,{
             method:'DELETE'
         })
         .then(res =>res.json())
@@ -31,7 +31,7 @@ export default function Movie() {
     }
     
     const handleadded =(id) =>{
-      fetch(`http://localhost:1000/movies/${id}`,{
+      fetch(`https://movie-hub-server-phi.vercel.app/movies/${id}`,{
         method:"PATCH",
         headers:{
           'content-type': 'application/json',

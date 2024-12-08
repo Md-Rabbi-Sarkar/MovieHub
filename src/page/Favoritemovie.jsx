@@ -7,7 +7,7 @@ export default function Favoritemovie() {
   const lodedfaverite = useLoaderData()
   const [favorites,setfavorite] = useState(lodedfaverite)
   const handledelete =(id) =>{
-    fetch(`http://localhost:1000/favorite/${id}`,{
+    fetch(`https://movie-hub-server-phi.vercel.app/favorite/${id}`,{
       method:'DELETE',
     })
     .then(res=>res.json())
