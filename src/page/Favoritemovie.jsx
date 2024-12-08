@@ -6,8 +6,6 @@ import { AuthContext } from '../provider/AuthProvider'
 export default function Favoritemovie() {
   const lodedfaverite = useLoaderData()
   const [favorites,setfavorite] = useState(lodedfaverite)
-  // const {addfavorite} = useContext(AuthContext)
-  // console.log(addfavorite)
   const handledelete =(id) =>{
     fetch(`http://localhost:1000/favorite/${id}`,{
       method:'DELETE',

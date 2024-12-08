@@ -10,24 +10,7 @@ export default function AuthProvider({children,id}) {
 
     const [loading, setloading] = useState(true);
     const [user, setUser] = useState(null)
-    // const [addfavorite , setaddfavorite] =useState([])
-    // async function handleadded(id) {
-
-    //     try {
-      
-    //       const response = await fetch(`http://localhost:1000/movies/${id}`); 
-      
-    //       const data = await response.json(); 
-      
-    //       setaddfavorite(data)
-      
-    //     } catch (error) {
-      
-    //       console.error('Error fetching data:', error);
-      
-    //     }
-      
-    //   }
+    
 
          
     
@@ -71,8 +54,6 @@ export default function AuthProvider({children,id}) {
         user,
         setloading,
         loading,
-        // handleadded,
-        // addfavorite
        
     }
 
