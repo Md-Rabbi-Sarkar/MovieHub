@@ -21,7 +21,7 @@ export default function Movie() {
                 const array = Object.values(movies)
                 const reamining = array.filter(movie=>movie._id !==id);
                 setmovies(reamining)
-                neviget('/')
+                neviget('/allmovies')
                 
             }
         })

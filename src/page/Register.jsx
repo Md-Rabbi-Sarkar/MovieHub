@@ -8,8 +8,8 @@ import { AuthContext } from '../provider/AuthProvider';
 
 export default function Register() {
    const navigat = useNavigate()
-  const {signinwithgoogle,user,loading,SetLoading,createuserwithemail} =useContext(AuthContext)
-  const notify = (e) => toast(e);
+  const {signinwithgoogle,user,loading,setoading,createuserwithemail} =useContext(AuthContext)
+  
 const handlesubmit =(e)=>{
   e.preventDefault();
   const email = e.target.email.value
@@ -33,6 +33,7 @@ const handlesubmit =(e)=>{
       navigat('/')
     })
     .catch(error=>{
+
       toast(error.message)
     })
 

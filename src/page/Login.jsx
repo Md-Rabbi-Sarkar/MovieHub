@@ -33,8 +33,7 @@ const signGoogle =()=>{
     Navigate('/')
   })
   .catch(error=>{
-    toast(error.message)
-
+// toast('dkfdfdfedj')
   })
 
  
